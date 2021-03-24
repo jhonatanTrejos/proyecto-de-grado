@@ -4,38 +4,22 @@ namespace App\Http\Controllers;
 
 use App\Models\Registro;
 use App\Models\registros;
+use App\Models\User;
+use GrahamCampbell\ResultType\Success;
 use Illuminate\Http\Request;
 
 class RegistroController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+    
     public function index()
     {
         $registros=Registro::paginate(1);
-        return view('registros.index',compact('registros'));
+    return view('registros.index',compact('registros',));
     }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function create()
     {
         return view('registros/create');
     }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    
     public function store(Request $request)
     {
          Registro::create([
@@ -51,51 +35,28 @@ class RegistroController extends Controller
             'ley100' => $request['ley100'],
             
         ]);
-        return redirect()->route('registro.index') ;//->whith('success', 'Se ha creado el registro correctamente');
+        return redirect()->route('registro.index')->with('success','Usuario creado correctamente');
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function show($id)
     {
-        //
+        
     }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
+    public function edit(Registro $registro)
     {
-        //
+        return view('registros.edit', compact('registro'));
     }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function update(Request $request, $id)
     {
-        //
+        $registro=Registro::findOrFail($id);
+        $data= $request->all();
+        $registro->update($data);
+        return redirect()->route('registro.index')->with('success','Usuario actualizado');
+     
     }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
+    public function destroy(Registro $registro)
     {
-        //
+        $registro->delete();
+        return back()->with('succes','Registro eliminado');
     }
 }
