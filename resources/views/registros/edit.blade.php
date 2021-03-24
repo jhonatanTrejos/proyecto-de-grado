@@ -16,61 +16,91 @@
                         <div class="row">
                             <label for="name" class="col-sm-4 col-form-label">Numero de cedula:</label>
                             <div class="md-sm-8">
-                            <input type="text" class="form-control"  name="numero_cedula" value="{{$registro->numero_cedula}}">
+                            <input type="text" class="form-control"  name="numero_cedula" value="{{old('numero_cedula',$registro->numero_cedula)}}">
+                            @if($errors->has('numero_cedula'))
+                            <span class="error text-danger" for="input-numero_cedula">{{$errors->first('numero_cedula')}}</span>
+                            @endif
                             </div>
                         </div>
                         <div class="row">
                             <label for="name" class="col-sm-4 col-form-label"> Nombre:</label>
                             <div class="md-sm-8">
-                            <input type="text" class="form-control"  name="nombre_empleado" value="{{$registro->nombre_empleado}}">
+                            <input type="text" class="form-control"  name="nombre_empleado" value="{{old('nombre_empleado',$registro->nombre_empleado)}}">
+                             @if($errors->has('nombre_empleado'))
+                            <span class="error text-danger" for="input-nombre_empleado">{{$errors->first('nombre_empleado')}}</span>
+                            @endif
                             </div>
                         </div>
                         <div class="row">
                             <label for="name" class="col-sm-4 col-form-label">Apellidos:</label>
                             <div class="md-sm-8">
-                            <input type="text" class="form-control"  name="apellidos_empleado" value="{{$registro->apellidos_empleado}}" >
+                            <input type="text" class="form-control"  name="apellidos_empleado" value="{{old('apellidos_empleado',$registro->apellidos_empleado)}}" >
+                            @if($errors->has('apellidos_empleado'))
+                            <span class="error text-danger" for="input-apellidos_empleado">{{$errors->first('apellidos_empleado')}}</span>
+                            @endif
                             </div>
                         </div>
                         <div class="row">
                             <label for="name" class="col-sm-4 col-form-label">Cargo:</label>
                             <div class="md-sm-8">
-                            <input type="text" class="form-control"  name="cargo" value="{{$registro->cargo}}" >
+                            <input type="text" class="form-control"  name="cargo" value="{{old('cargo',$registro->cargo)}}" >
+                            @if($errors->has('cargo'))
+                            <span class="error text-danger" for="input-cargo">{{$errors->first('cargo')}}</span>
+                            @endif
                             </div>
                         </div>
                         <div class="row">
                             <label for="name" class="col-sm-4 col-form-label">Fecha de inicio:</label>
                             <div class="md-sm-8">
-                            <input type="text" class="form-control"  name="fecha_inicio" value="{{$registro->fecha_inicio}}">
+                            <input type="text" class="form-control"  name="fecha_inicio" value="{{old('fecha_inicio',$registro->fecha_inicio)}}">
+                            @if($errors->has('fecha_inicio'))
+                            <span class="error text-danger" for="input-fecha_inicio">{{$errors->first('fecha_inicio')}}</span>
+                            @endif
                             </div>
                         </div>
                         <div class="row">
                             <label for="name" class="col-sm-4 col-form-label">Fecha de retiro:</label>
                             <div class="md-sm-8">
-                            <input type="text" class="form-control"  name="fecha_retiro" value="{{$registro->fecha_retiro}}" >
+                            <input type="text" class="form-control"  name="fecha_retiro" value="{{old('fecha_retiro',$registro->fecha_retiro)}}" >
+                            @if($errors->has('fecha_retiro'))
+                            <span class="error text-danger" for="input-fecha_retiro">{{$errors->first('fecha_retiro')}}</span>
+                            @endif
                             </div>
                         </div>
                         <div class="row">
                             <label for="name" class="col-sm-4 col-form-label">Dias laborados:</label>
                             <div class="md-sm-8">
-                            <input type="numeric" class="form-control"  name="dias_laborados" value="{{$registro->dias_laborados}}">
+                            <input type="numeric" class="form-control"  name="dias_laborados" value="{{old('dias_laborados',$registro->dias_laborados)}}">
+                            @if($errors->has('dias_laborados'))
+                            <span class="error text-danger" for="input-dias_laborados">{{$errors->first('dias_laborados')}}</span>
+                            @endif
                             </div>
                         </div>
                         <div class="row">
                             <label for="name" class="col-sm-4 col-form-label">Sueldo:</label>
                             <div class="md-sm-8">
-                            <input type="numeric" class="form-control"  name="sueldo" value="{{$registro->sueldo}}">
+                            <input type="numeric" class="form-control"  name="sueldo" value="{{old('sueldo',$registro->sueldo)}}">
+                            @if($errors->has('sueldo'))
+                            <span class="error text-danger" for="input-sueldo">{{$errors->first('sueldo')}}</span>
+                            @endif
                             </div>
                         </div>
                         <div class="row">
                             <label for="name" class="col-sm-4 col-form-label">Devengado:</label>
                             <div class="md-sm-4">
-                            <input type="numeric" class="form-control"  name="devengado" value="{{$registro->devengado}}" >
+                            <input type="numeric" class="form-control"  name="devengado" value="{{old('devengado',$registro->devengado)}}" >
+                            @if($errors->has('devengado'))
+                            <span class="error text-danger" for="input-devengado">{{$errors->first('devengado')}}</span>
+                            @endif
                             </div>
                         </div>
                         <div class="row">
                             <label for="name" class="col-sm-4 col-form-label">Ley 100:</label>
                             <div class="md-sm-4">
-                            <input type="numeric" class="form-control"  name="ley100" value="{{$registro->ley100}}">
+                            <input type="numeric" class="form-control"  name="ley100" value="{{old('ley100',$registro->ley100)}}">
+                            @if($errors->has('ley100'))
+                            <span class="error text-danger" for="input-ley100">{{$errors->first('ley100')}}</span>
+                            @endif
                             </div>
                         </div>
                     </div>

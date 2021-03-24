@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\RegistroCreateRequest;
+use App\Http\Requests\RegistroEditRequest;
 use App\Models\Registro;
 use App\Models\registros;
 use App\Models\User;
@@ -20,8 +22,10 @@ class RegistroController extends Controller
     {
         return view('registros/create');
     }
-    public function store(Request $request)
+    public function store(RegistroCreateRequest $request)
     {
+        /*
+        //validacion de campos de create lo reemplazo en el request para no saturar el controlador...
         $request->validate([
             'numero_cedula' =>'required|min:5|numeric',
             'nombre_empleado' => 'required|min:3|max:200|string',
@@ -34,7 +38,7 @@ class RegistroController extends Controller
             'devengado' => 'nullable|numeric',
             'ley100' => 'nullable|numeric',
 
-        ]);
+        ]);*/
          Registro::create([
             'numero_cedula' => $request['numero_cedula'],
             'nombre_empleado' => $request['nombre_empleado'],
@@ -59,7 +63,7 @@ class RegistroController extends Controller
     {
         return view('registros.edit', compact('registro'));
     }
-    public function update(Request $request, $id)
+    public function update(RegistroCreateRequest $request, $id)
     {
         $registro=Registro::findOrFail($id);
         $data= $request->all();
