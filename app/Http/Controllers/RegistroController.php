@@ -22,6 +22,19 @@ class RegistroController extends Controller
     }
     public function store(Request $request)
     {
+        $request->validate([
+            'numero_cedula' =>'required|min:5|numeric',
+            'nombre_empleado' => 'required|min:3|max:200|string',
+            'apellidos_empleado' => 'required|min:3|string',
+            'cargo' => 'nullable|min:4|string',
+            'fecha_inicio' => 'nullable|min:10|max:11|date',
+            'fecha_retiro' => 'nullable|min:10|max:11|date',
+            'dias_laborados' => 'nullable|min:1|numeric',
+            'sueldo' => 'nullable|numeric',
+            'devengado' => 'nullable|numeric',
+            'ley100' => 'nullable|numeric',
+
+        ]);
          Registro::create([
             'numero_cedula' => $request['numero_cedula'],
             'nombre_empleado' => $request['nombre_empleado'],
