@@ -1,15 +1,14 @@
-@extends('layouts.app')
-
-@section('content')
-<!DOCTYPE html>
+php<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link href="" rel="stylesheet">
-    <title>Document</title>
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <title>pagina de inicio</title>
 </head>
+
+
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-primary">
         <div class="container-fluid">
@@ -21,21 +20,22 @@
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
 
 
+
           </div>
         </div>
       </nav>
 
-      <nav class="navbar navbar-expand-lg" style="background-color: #e3f2fd;">
+      <nav class="navbar navbar-expand-lg" style="background-color: #e3f2ff;">
         <div class="container-fluid">
            >
           <a class="navbar-brand" href="#" >Consultas de certificados laborales</a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <button class="btn btn-link" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">Solicitud de certificados</a>
+                <a class="nav-link active" aria-current="page" href="solicitud">Solicitud de certificados</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="#">Ayuda y Soporte</a>
@@ -65,15 +65,17 @@
       </nav>
 
       <div class="login-box">
-        <link href="" rel="stylesheet">
+        <link href="{{ asset('css/stilo.css') }}" rel="stylesheet">
+
 
         <img src="imagenes/logoquinchia.png" class="avatar" alt="Avatar Image">
         <h1>Consulta certificado</h1>
-        <form action="" method "get">
+        <form action="{{route('cliente.index')}}" method "get">
           <!-- USERNAME INPUT -->
           <label for="username">Número de documento</label>
-          <input type="search" class="form-control form-control-navbar " name="texto" placeholder="search" value={{"texto"}} >
-          <input type="submit" class="btn btn-primary " value="Ver certificado">
+          <input type="search" class="form-control form-control-navbar " name="texto" placeholder="search" value="texto">
+          <a href="nuevo" type="button" href="nuevo" class="btn btn-success">Ver certificado
+          </a><button type="button" href="nuevo" class="btn btn-success">Ver certificado</button>
         </form>
 
       </div>
@@ -81,5 +83,3 @@
     </div>
 </body>
 </html>
-
-@endsection
