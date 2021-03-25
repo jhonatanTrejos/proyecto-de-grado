@@ -22,5 +22,13 @@ class Registro extends Model
         'ley100',
 
     ];
+    //relacion muchos a uno.. de usuario con registro  a nivel de eloquent
+    public function user(){
+        return $this->belongsTo('App\Models\User');
+    }
+    //relacion muchos a uno.. de  con libro registro  a nivel de eloquent
+    public function libro(){
+       return $this->belongsTo('App\Models\Libro');
+    }
     
 }
