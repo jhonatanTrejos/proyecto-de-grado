@@ -65,7 +65,8 @@
                                                     <a href="{{route('registro.edit',$registro->id)}}" class="btn btn-warning ">
                                                      <i class="material-icons">edit</i>
                                                     </a>
-                                                    <form action="{{route('registro.delete',$registro->id)}}" method="POST" style="display: inline-block;" onsubmit=return confirm('¿Esta seguro que desea eliminar este Registro?')>
+                                                    <form action="{{route('registro.delete',$registro->id)}}" method="POST" style="display: inline-block;"
+                                                    onsubmit=return confirmation('¿Esta seguro que desea eliminar este Registro?')>
                                                     @csrf
                                                     @method('DELETE')
                                                     <button class="btn btn-danger" type="submit">

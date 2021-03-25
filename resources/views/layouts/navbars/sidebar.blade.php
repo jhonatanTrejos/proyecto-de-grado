@@ -41,6 +41,7 @@
           </ul>
         </div>
       </li>
+      
       <li class="nav-item{{ $activePage == 'registros' ? ' active' : '' }}">
         <a class="nav-link" href={{route('registro.store')}}>
           <i class="material-icons">content_paste</i>
@@ -59,6 +60,32 @@
           <p>{{ __('Solicitudes') }}</p>
         </a>
       </li>
+      <!--//libros-->
+      <li class="nav-item {{ ($activePage == 'profile' || $activePage == 'user-management') ? ' active' : '' }}">
+        <a class="nav-link" data-toggle="collapse" href="#" aria-expanded="true">
+          <i class="material-icons">import_contacts</i>
+          <p>{{ __('Libros') }}
+            <b class="caret"></b>
+          </p>
+        </a>
+        <div class="collapse show" id="laravelExample">
+          <ul class="nav">
+            <li class="nav-item{{ $activePage == 'profile' ? ' active' : '' }}">
+              <a class="nav-link" href="#">
+                <span class="sidebar-mini"> UP </span>
+                <span class="sidebar-normal">{{ __('User profile') }} </span>
+              </a>
+            </li>
+            <li class="nav-item{{ $activePage == 'user-management' ? ' active' : '' }}">
+              <a class="nav-link" href="#">
+                <span class="sidebar-mini"> UM </span>
+                <span class="sidebar-normal"> {{ __('User Management') }} </span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </li>
+      <!--//fin libros-->
       <li class="nav-item{{ $activePage == 'map' ? ' active' : '' }}">
         <a class="nav-link" href="#">
           <i class="material-icons">location_ons</i>

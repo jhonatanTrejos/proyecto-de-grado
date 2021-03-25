@@ -12,7 +12,7 @@
                            <h4 class="card-title">Registro</h4>
                            <p class="card-category">Editar datos</p>
                     </div>
-                    <div class="card-body">
+                    <!-- //<div class="card-body">genera problemas quitar el div de cierre-->
                         <div class="row">
                             <label for="name" class="col-sm-4 col-form-label">Numero de cedula:</label>
                             <div class="md-sm-8">

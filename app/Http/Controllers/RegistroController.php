@@ -15,7 +15,7 @@ class RegistroController extends Controller
     
     public function index()
     {
-        $registros=Registro::paginate(1);
+        $registros=Registro::paginate(2);
     return view('registros.index',compact('registros',));
     }
     public function create()
@@ -52,7 +52,7 @@ class RegistroController extends Controller
             'ley100' => $request['ley100'],
             
         ]);
-        return redirect()->route('registro.index')->with('success','Usuario creado correctamente');
+        return redirect()->route('registro.index')->with('success','Registro creado correctamente');
     }
 
     public function show($id)
@@ -74,6 +74,7 @@ class RegistroController extends Controller
     public function destroy(Registro $registro)
     {
         $registro->delete();
-        return back()->with('succes','Registro eliminado');
+
+        return redirect()->route('registro.index')->with('success','Registro eliminado');
     }
 }
