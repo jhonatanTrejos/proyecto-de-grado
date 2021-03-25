@@ -43,6 +43,11 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::post('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::get('/user', [App\Http\Controllers\HomeController::class, 'User'])->name('user');
-Route::post('/user', [App\Http\Controllers\HomeController::class, 'User'])->name('user');
 
+Route::get('/home/create', [App\Http\Controllers\RegistroController::class, 'create']);
+Route::post('/home/create', [App\Http\Controllers\RegistroController::class, 'store'])->name('registro.store');
+Route::get('/home/index',[App\Http\Controllers\RegistroController::class, 'index'])->name('registro.index');
+Route::get('/home/{registro}/edit',[App\Http\Controllers\RegistroController::class, 'edit'])->name('registro.edit');
+Route::put('/home/{registro}/edit',[App\Http\Controllers\RegistroController::class, 'update'])->name('registro.update');
+Route::delete('/home/{registro}/edit',[App\Http\Controllers\RegistroController::class, 'destroy'])->name('registro.delete');
 
