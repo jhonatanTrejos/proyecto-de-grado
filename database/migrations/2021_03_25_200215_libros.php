@@ -23,8 +23,8 @@ public function up()
         $table->foreign('modifiedby_id')
             ->references('id')->on('users')
             ->onDelete('set null');
-
-        });
+        }
+        );
     }
     public function down()
     {

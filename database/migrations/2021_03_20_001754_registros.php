@@ -13,6 +13,7 @@ class Registros extends Migration
      */
     public function up()
     {
+
         Schema::create('registros', function (Blueprint $table) {
             $table->id();
             $table->string('numero_cedula');
@@ -23,8 +24,8 @@ class Registros extends Migration
             $table->date('fecha_retiro')->nullable();
             $table->integer('dias_laborados')->nullable();
             $table->integer('sueldo')->nullable();
-            $table->string('devengado')->nullable();
-            $table->string('ley100')->nullable();
+            $table->integer('devengado')->nullable();
+            $table->integer('ley100')->nullable();
             $table->unsignedBigInteger('libro_id')->nullable();
             $table->timestamps();
             $table->unsignedBigInteger('createdby_id')->nullable();
@@ -32,7 +33,7 @@ class Registros extends Migration
 
             $table->foreign('createdby_id')
                 ->references('id')->on('users')
-                ->onDelete('set null');
+                 ->onDelete('set null');
             $table->foreign('modifiedby_id')
                 ->references('id')->on('users')
                 ->onDelete('set null');
@@ -40,6 +41,7 @@ class Registros extends Migration
                 ->references('id')->on('libros')
                 ->onDelete('set null');
         });
+       
         
     }
 
