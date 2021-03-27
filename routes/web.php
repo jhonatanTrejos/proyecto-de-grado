@@ -44,3 +44,4 @@ Route::delete('/home/{registro}/edit',[App\Http\Controllers\RegistroController::
 Route::get('/home/libros/create', [App\Http\Controllers\LibroController::class, 'create'])->name('libro.create');
 Route::post('/home/libros/create', [App\Http\Controllers\LibroController::class, 'store'])->name('libro.store');
 Route::get('/home/libros/index',[App\Http\Controllers\LibroController::class, 'index'])->name('libro.index');
+Route::get('/home/libros/show',[App\Http\Controllers\LibroController::class, 'show'])->name('libro.show');

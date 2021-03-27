@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Libro;
 use Illuminate\Http\Request;
 use App\Http\Requests\LibroCreateRequest;
+use App\Models\User;
 
 class LibroController extends Controller
 {
@@ -27,10 +28,12 @@ class LibroController extends Controller
         ]);
         return redirect()->route('libro.index')->with('success','Libro creado correctamente');
     }
-
+    //funcion para ver detalles del libro
     public function show($id)
     {
-        
+        //almacenar el valor del id
+        $libro=Libro::find($id);
+        return view('libro.show',compact('libro'));
     }
     public function edit(Libro $registro)
     {
