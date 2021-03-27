@@ -20,6 +20,7 @@ class Registro extends Model
         'sueldo',
         'devengado',
         'ley100',
+        'libro_id',
 
     ];
     //relacion muchos a uno.. de usuario con registro  a nivel de eloquent
