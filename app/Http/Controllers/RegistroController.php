@@ -50,6 +50,7 @@ class RegistroController extends Controller
             'sueldo' => $request['sueldo'],
             'devengado' => $request['devengado'],
             'ley100' => $request['ley100'],
+            'libro_id'=>$request['libro_id'],
             
         ]);
         return redirect()->route('registro.index')->with('success','Registro creado correctamente');

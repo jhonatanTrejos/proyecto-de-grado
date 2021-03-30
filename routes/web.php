@@ -44,10 +44,18 @@ Route::post('/home', [App\Http\Controllers\HomeController::class, 'index'])->nam
 
 Route::get('/user', [App\Http\Controllers\HomeController::class, 'User'])->name('user');
 
+//rutas para registros
 Route::get('/home/create', [App\Http\Controllers\RegistroController::class, 'create']);
 Route::post('/home/create', [App\Http\Controllers\RegistroController::class, 'store'])->name('registro.store');
 Route::get('/home/index',[App\Http\Controllers\RegistroController::class, 'index'])->name('registro.index');
 Route::get('/home/{registro}/edit',[App\Http\Controllers\RegistroController::class, 'edit'])->name('registro.edit');
 Route::put('/home/{registro}/edit',[App\Http\Controllers\RegistroController::class, 'update'])->name('registro.update');
 Route::delete('/home/{registro}/edit',[App\Http\Controllers\RegistroController::class, 'destroy'])->name('registro.delete');
-
+//rutas para libros
+Route::get('/home/libros/create', [App\Http\Controllers\LibroController::class, 'create'])->name('libro.create');
+Route::post('/home/libros/create', [App\Http\Controllers\LibroController::class, 'store'])->name('libro.store');
+Route::get('/home/libros/index',[App\Http\Controllers\LibroController::class, 'index'])->name('libro.index');
+Route::get('home/libros/show/{libro}',[App\Http\Controllers\LibroController::class, 'show'])->name('libros.show');
+Route::get('/home/edit/{libro}',[App\Http\Controllers\LibroController::class, 'edit'])->name('libros.edit');
+Route::put('/home/edit/{libro}',[App\Http\Controllers\LibroController::class, 'update'])->name('libros.update');
+Route::delete('/home/edit/{libro}',[App\Http\Controllers\LibroController::class, 'destroy'])->name('libros.delete');

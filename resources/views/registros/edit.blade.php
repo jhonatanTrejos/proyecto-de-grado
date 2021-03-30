@@ -1,9 +1,10 @@
 @extends('layouts.main',['activePage'=>'','titlePage'=>'Editar registro'])
 
 @section('content')
-    
-
-    
+    <div class="content">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-12">
                 <form action="{{route('registro.update',$registro->id)}}" method="post" class="form-horizontal">
                 @csrf
                 @method('PUT')
@@ -15,7 +16,7 @@
                     <!-- //<div class="card-body">genera problemas quitar el div de cierre-->
                         <div class="row">
                             <label for="name" class="col-sm-4 col-form-label">Numero de cedula:</label>
-                            <div class="md-sm-8">
+                            <div class="col-sm-8">
                             <input type="text" class="form-control"  name="numero_cedula" value="{{old('numero_cedula',$registro->numero_cedula)}}">
                             @if($errors->has('numero_cedula'))
                             <span class="error text-danger" for="input-numero_cedula">{{$errors->first('numero_cedula')}}</span>
@@ -24,7 +25,7 @@
                         </div>
                         <div class="row">
                             <label for="name" class="col-sm-4 col-form-label"> Nombre:</label>
-                            <div class="md-sm-8">
+                            <div class="col-sm-8">
                             <input type="text" class="form-control"  name="nombre_empleado" value="{{old('nombre_empleado',$registro->nombre_empleado)}}">
                              @if($errors->has('nombre_empleado'))
                             <span class="error text-danger" for="input-nombre_empleado">{{$errors->first('nombre_empleado')}}</span>
@@ -33,7 +34,7 @@
                         </div>
                         <div class="row">
                             <label for="name" class="col-sm-4 col-form-label">Apellidos:</label>
-                            <div class="md-sm-8">
+                            <div class="col-sm-8">
                             <input type="text" class="form-control"  name="apellidos_empleado" value="{{old('apellidos_empleado',$registro->apellidos_empleado)}}" >
                             @if($errors->has('apellidos_empleado'))
                             <span class="error text-danger" for="input-apellidos_empleado">{{$errors->first('apellidos_empleado')}}</span>
@@ -42,7 +43,7 @@
                         </div>
                         <div class="row">
                             <label for="name" class="col-sm-4 col-form-label">Cargo:</label>
-                            <div class="md-sm-8">
+                            <div class="col-sm-8">
                             <input type="text" class="form-control"  name="cargo" value="{{old('cargo',$registro->cargo)}}" >
                             @if($errors->has('cargo'))
                             <span class="error text-danger" for="input-cargo">{{$errors->first('cargo')}}</span>
@@ -51,7 +52,7 @@
                         </div>
                         <div class="row">
                             <label for="name" class="col-sm-4 col-form-label">Fecha de inicio:</label>
-                            <div class="md-sm-8">
+                            <div class="col-sm-8">
                             <input type="text" class="form-control"  name="fecha_inicio" value="{{old('fecha_inicio',$registro->fecha_inicio)}}">
                             @if($errors->has('fecha_inicio'))
                             <span class="error text-danger" for="input-fecha_inicio">{{$errors->first('fecha_inicio')}}</span>
@@ -103,15 +104,14 @@
                             @endif
                             </div>
                         </div>
+                        <div class="card-footer ml-auto mr-auto">
+                            <button class="btn btn-primary" type="submit">Update</button>
+                        </div>
                     </div>
-                      <div class="card-footer ml-auto mr-auto">
-                    <button class="btn btn-primary" type="submit">Update</button>
-                    </div>
-                </div>
                 </form>
-            
-        
-    
+            </div>
+        </div>
+    </div>
 </div>
 @stop
 
