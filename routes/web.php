@@ -44,4 +44,7 @@ Route::delete('/home/{registro}/edit',[App\Http\Controllers\RegistroController::
 Route::get('/home/libros/create', [App\Http\Controllers\LibroController::class, 'create'])->name('libro.create');
 Route::post('/home/libros/create', [App\Http\Controllers\LibroController::class, 'store'])->name('libro.store');
 Route::get('/home/libros/index',[App\Http\Controllers\LibroController::class, 'index'])->name('libro.index');
-Route::get('/home/libros/show',[App\Http\Controllers\LibroController::class, 'show'])->name('libro.show');
+Route::get('home/libros/show/{libro}',[App\Http\Controllers\LibroController::class, 'show'])->name('libros.show');
+Route::get('/home/edit/{libro}',[App\Http\Controllers\LibroController::class, 'edit'])->name('libros.edit');
+Route::put('/home/edit/{libro}',[App\Http\Controllers\LibroController::class, 'update'])->name('libros.update');
+Route::delete('/home/edit/{libro}',[App\Http\Controllers\LibroController::class, 'destroy'])->name('libros.delete');

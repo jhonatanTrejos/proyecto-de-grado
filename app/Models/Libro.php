@@ -10,6 +10,7 @@ class Libro extends Model
     use HasFactory;
  //los campos fillable son los que vamos a llenar
     protected $fillable = [
+        'id',
         'fecha_inicio',
         'fecha_fin',
         'detalles',

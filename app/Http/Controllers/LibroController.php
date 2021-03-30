@@ -32,25 +32,31 @@ class LibroController extends Controller
     public function show($id)
     {
         //almacenar el valor del id
-        $libro=Libro::find($id);
-        return view('libro.show',compact('libro'));
+        $libro=Libro::findOrFail($id);
+        //dd($libro);
+         return view('libros.show',compact('libro'));
     }
-    public function edit(Libro $registro)
+    public function edit(Libro $libro)
     {
-        return view('registros.edit', compact('registro'));
+        return view('libros.edit', compact('libro'));
     }
     public function update(Libro $request, $id)
     {
-        $registro=Libro::findOrFail($id);
-        $data= $request->all();
-        $registro->update($data);
-        return redirect()->route('registro.index')->with('success','Usuario actualizado');
+        $libro=Libro::findOrFail($id);
+        //$data= $request->all();
+        $data=[
+        'fecha_inicio' => $request['fecha_inicio'],
+        'fecha_fin' => $request['fecha_fin'],
+        'detalles' => $request['detalles']
+        ];
+        $libro->update($data);
+        return redirect()->route('libro.index')->with('success','Usuario actualizado');
      
     }
-    public function destroy(Libro $registro)
+    public function destroy(Libro $libro)
     {
-        $registro->delete();
+        $libro->delete();
 
-        return redirect()->route('registro.index')->with('success','Registro eliminado');
+        return redirect()->route('libro.index')->with('success','Liro eliminado');
     }
 }

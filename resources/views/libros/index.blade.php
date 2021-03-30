@@ -42,7 +42,20 @@
                                                 <td>{{$libro->fecha_fin}}</td>
                                                 <td>{{$libro->detalles}}</td>
                                                 <td class="td-actions">
-                                                  
+                                                    <a href="{{route('libros.show',$libro->id) }}" class="btn btn-facebook ">
+                                                     <i class="material-icons">visibility</i>
+                                                    </a>
+                                                   <a href="{{route('libros.edit',$libro->id) }}" class="btn btn-warning ">
+                                                     <i class="material-icons">edit</i>
+                                                    </a>
+                                                    <form action="{{route('libros.delete',$libro->id)}}" method="POST" style="display: inline-block;"
+                                                    onsubmit=return confirmation('¿Esta seguro que desea eliminar este Registro?')>
+                                                    @csrf
+                                                    @method('DELETE')
+                                                    <button class="btn btn-danger" type="submit">
+                                                        <i class="material-icons">delete</i>
+                                                    </button>
+                                                    </form>
                                                 </td>
                                             </tr>  
                                         @endforeach
