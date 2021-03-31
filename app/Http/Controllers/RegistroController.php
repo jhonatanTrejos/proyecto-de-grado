@@ -16,7 +16,7 @@ class RegistroController extends Controller
     public function index()
     {
         $registros=Registro::paginate(2);
-    return view('registros.index',compact('registros',));
+    return view('registros.index',compact('registros'));
     }
     public function create()
     {

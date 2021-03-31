@@ -48,3 +48,6 @@ Route::get('home/libros/show/{libro}',[App\Http\Controllers\LibroController::cla
 Route::get('/home/edit/{libro}',[App\Http\Controllers\LibroController::class, 'edit'])->name('libros.edit');
 Route::put('/home/edit/{libro}',[App\Http\Controllers\LibroController::class, 'update'])->name('libros.update');
 Route::delete('/home/edit/{libro}',[App\Http\Controllers\LibroController::class, 'destroy'])->name('libros.delete');
+
+//rutas para solicitudess
+Route::get('/home/solicitudes/index',[App\Http\Controllers\SolicitudController::class, 'index'])->name('solicitudes.index');

@@ -56,4 +56,13 @@ class User extends Authenticatable
     public function libros(){
         return $this->hasMany('App\Models\Libro');
     }
+    //relacion muchos a uno.. de  con solicitud registro  a nivel de eloquent documentacion
+    //public function solicituds(){
+      // return $this->hasMany(Solicitud::class);
+   // }
+    //relacion muchos a uno.. de  con solicitud registro  a nivel de eloquent stack overflow
+    public function solicitud(){
+        return $this->hasMany('App\Models\Solicitud');
+     }
+    
 }
