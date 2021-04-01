@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\controllerUsuario;
+
 
 
 use App\Http\Controllers\HomeController;
@@ -36,7 +38,12 @@ Route::get('/certificado', function ()
 Route::get('/solicitud', function ()
 {return view('solicitud');
 });
-
+Route::get('/politicas', function ()
+{return view('politicas');
+});
+Route::get('/politicas', function ()
+{return view('politicas');
+});
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
