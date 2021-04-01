@@ -48,4 +48,21 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
     
+    //relacion uno a muchos.. de usuario con registro  a nivel de eloquent
+    public function registros(){
+        return $this->hasMany('App\Models\Registro');
+    }
+     //relacion uno a muchos.. de usuario con libro  a nivel de eloquent
+    public function libros(){
+        return $this->hasMany('App\Models\Libro');
+    }
+    //relacion muchos a uno.. de  con solicitud registro  a nivel de eloquent documentacion
+    //public function solicituds(){
+      // return $this->hasMany(Solicitud::class);
+   // }
+    //relacion muchos a uno.. de  con solicitud registro  a nivel de eloquent stack overflow
+    public function solicitud(){
+        return $this->hasMany('App\Models\Solicitud');
+     }
+    
 }

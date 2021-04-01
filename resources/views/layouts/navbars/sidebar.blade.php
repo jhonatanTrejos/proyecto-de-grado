@@ -5,7 +5,7 @@
       Tip 2: you can also add an image using data-image tag
   -->
   <div class="logo">
-    <a href="https://creative-tim.com/" class="simple-text logo-normal">
+    <a href="#" class="simple-text logo-normal">
       {{ __('Historias Laborales') }}
     </a>
   </div>
@@ -14,13 +14,13 @@
       <li class="nav-item{{ $activePage == 'dashboard' ? ' active' : '' }}">
         <a class="nav-link" href="{{ route('home') }}">
           <i class="material-icons">dashboard</i>
-            <p>{{ __('Dashboard') }}</p>
+            <p>{{ __('Inicio') }}</p>
         </a>
       </li>
-      <li class="nav-item {{ ($activePage == 'profile' || $activePage == 'user-management') ? ' active' : '' }}">
+      <li class="nav-item {{ ($activePage == 'profile' || $activePage == 'users') ? ' active' : '' }}">
         <a class="nav-link" data-toggle="collapse" href="#laravelExample" aria-expanded="true">
-          <i><img style="width:25px" src="{{('img/laravel.svg') }}"></i>
-          <p>{{ __('Laravel Examples') }}
+          <i class="material-icons">admin_panel_settings</i>
+          <p>{{ __('Administrar usuarios') }}
             <b class="caret"></b>
           </p>
         </a>
@@ -54,32 +54,32 @@
             <p>{{ __('Ver registros') }}</p>
         </a>
       </li>
-      <li class="nav-item{{ $activePage == 'icons' ? ' active' : '' }}">
-        <a class="nav-link" href="#">
+      <li class="nav-item{{ $activePage == 'solicitud' ? ' active' : '' }}">
+        <a class="nav-link" href={{route('solicitudes.index')}}>
           <i class="material-icons">bubble_chart</i>
           <p>{{ __('Solicitudes') }}</p>
         </a>
       </li>
       <!--//libros-->
       <li class="nav-item {{ ($activePage == 'profile' || $activePage == 'user-management') ? ' active' : '' }}">
-        <a class="nav-link" data-toggle="collapse" href="#" aria-expanded="true">
+        <a class="nav-link" data-toggle="collapse" href="#showLibro" aria-expanded="true">
           <i class="material-icons">import_contacts</i>
           <p>{{ __('Libros') }}
             <b class="caret"></b>
           </p>
         </a>
-        <div class="collapse show" id="laravelExample">
+        <div class="collapse show" id="showLibro">
           <ul class="nav">
-            <li class="nav-item{{ $activePage == 'profile' ? ' active' : '' }}">
-              <a class="nav-link" href="#">
+            <li class="nav-item{{ $activePage == 'ver' ? ' active' : '' }}">
+              <a class="nav-link" href="{{route('libro.index')}}">
                 <span class="sidebar-mini"> UP </span>
-                <span class="sidebar-normal">{{ __('User profile') }} </span>
+                <span class="sidebar-normal">{{ __('Ver Libros') }} </span>
               </a>
             </li>
-            <li class="nav-item{{ $activePage == 'user-management' ? ' active' : '' }}">
-              <a class="nav-link" href="#">
+            <li class="nav-item{{ $activePage == 'crear' ? ' active' : '' }}">
+              <a class="nav-link" href={{route('libro.create')}}>
                 <span class="sidebar-mini"> UM </span>
-                <span class="sidebar-normal"> {{ __('User Management') }} </span>
+                <span class="sidebar-normal"> {{ __('Crear libro') }} </span>
               </a>
             </li>
           </ul>

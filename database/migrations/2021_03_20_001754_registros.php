@@ -13,20 +13,36 @@ class Registros extends Migration
      */
     public function up()
     {
+
         Schema::create('registros', function (Blueprint $table) {
             $table->id();
             $table->string('numero_cedula');
             $table->string('nombre_empleado');
             $table->string('apellidos_empleado');
-            $table->string('cargo');
-            $table->date('fecha_inicio');
-            $table->date('fecha_retiro');
-            $table->integer('dias_laborados');
-            $table->integer('sueldo');
-            $table->string('devengado');
-            $table->string('ley100');
+            $table->string('cargo')->nullable();
+            $table->date('fecha_inicio')->nullable();
+            $table->date('fecha_retiro')->nullable();
+            $table->integer('dias_laborados')->nullable();
+            $table->integer('sueldo')->nullable();
+            $table->integer('devengado')->nullable();
+            $table->integer('ley100')->nullable();
+            $table->unsignedBigInteger('libro_id')->nullable();
             $table->timestamps();
+            $table->unsignedBigInteger('createdby_id')->nullable();
+            $table->unsignedBigInteger('modifiedby_id')->nullable();
+
+            $table->foreign('createdby_id')
+                ->references('id')->on('users')
+                 ->onDelete('set null');
+            $table->foreign('modifiedby_id')
+                ->references('id')->on('users')
+                ->onDelete('set null');
+            $table->foreign('libro_id')
+                ->references('id')->on('libros')
+                ->onDelete('set null');
         });
+       
+        
     }
 
     /**

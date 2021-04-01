@@ -1,10 +1,11 @@
 
 @extends('layouts.main',['activePage'=>'registros','titlePage'=>'Nuevo registro'])
-
 @section('content')
     
-
-    
+<div class="content">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-12">
                 <form action="{{route('registro.store')}}" method="post" class="form-horizontal">
                 @csrf
                 <div class="card">
@@ -24,10 +25,20 @@
                     </ul>
 
                     @endif*/-->
+                    <div class="card-body">
+                        <div class="row">
+                            <label for="name" class="col-sm-4 col-form-label">Numero del libro:</label>
+                            <div class="md-sm-8">
+                            <input type="text" class="form-control"  name="libro_id" placeholder="ingrese el numero de libro" value="{{old('numero_libro')}}" autofocus>
+                            @if($errors->has('libro_id'))
+                            <span class="error text-danger" for="input-libro_id">{{$errors->first('libro_id')}}</span>
+                            @endif
+                            </div>
+                        </div>
                         <div class="row">
                             <label for="name" class="col-sm-4 col-form-label">Numero de cedula:</label>
                             <div class="md-sm-8">
-                            <input type="text" class="form-control"  name="numero_cedula" placeholder="Ingrese el numero de cédula" value="{{old('numero_cedula')}}" autofocus>
+                            <input type="text" class="form-control"  name="numero_cedula" placeholder="Ingrese el numero de cédula" value="{{old('numero_cedula')}}">
                             @if($errors->has('numero_cedula'))
                             <span class="error text-danger" for="input-numero_cedula">{{$errors->first('numero_cedula')}}</span>
                             @endif
@@ -120,9 +131,9 @@
                     </div>
                 </div>
                 </form>
-            
-        
-    
+            </div>
+        </div>
+    </div>
 </div>
 @stop
 
