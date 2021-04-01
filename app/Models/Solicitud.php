@@ -24,9 +24,9 @@ class Solicitud extends Model
   }
 
   //relacion uno a uno con estados
-  public function estado()
+  public function estados()
     {
-        return $this->hasOne(Estado::class);
+       // return $this->hasOne('App\Models\Estado');
     }
     
 }
