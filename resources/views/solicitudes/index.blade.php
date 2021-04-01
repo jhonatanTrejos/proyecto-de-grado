@@ -30,7 +30,7 @@
                                                 <td>{{$solicitud->users->name}},{{$solicitud->users->last_name}}</td>
                                                 <td>{{$solicitud->created_at}}</td>
                                                 <td>{{$solicitud->updated_at}}</td>
-                                                <td>{{$solicitud->estado}}</td>
+                                                <td>{{$solicitud->id}}</td>
                                                 
                                                 <td class="td-actions">
                                                 
