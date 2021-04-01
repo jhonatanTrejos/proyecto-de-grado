@@ -9,15 +9,15 @@ class Solicitud extends Model
 {
     use HasFactory;
      
-    // protected $fillable = [
-    //     'id',
-    //     'created_at',
-    //     'updated_at',
-    //     'user_id',
-    //     'estado',
-    //     'modifiedby_id',
-    // ];
-
+    //los campos fillable son los que vamos a llenar
+    protected $fillable = [
+      'id',
+      'created_at',
+      'updated_at',
+      'user_id',
+      'modifiedby_id',
+      'estado_id',
+  ];
     //relacion muchos a uno.. de usuario con solicitud  a nivel de eloquent documentacion
    public function users(){
     return $this->belongsTo(User::class,'user_id');
@@ -26,7 +26,7 @@ class Solicitud extends Model
   //relacion uno a uno con estados
   public function estados()
     {
-       // return $this->hasOne('App\Models\Estado');
+        return $this->belongsTo(Estado::class,'estado_id');
     }
     
 }

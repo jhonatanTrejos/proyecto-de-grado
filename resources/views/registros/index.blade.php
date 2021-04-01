@@ -20,6 +20,20 @@
                             {{session('success')}}
                             </div>
                             @endif
+                            {{-- //esta es la busqueda--}}
+                            <div class="col-xl-12">
+                                <form action="#" method="get">
+                                    <div class="form-row">
+                                        <div class="col-sm-4">
+                                            <input class="form-control" type="text" name="findReg" value="">
+                                        </div>
+                                        <div class="col-auto">
+                                        <input class="btn btn-primary" type="submit" value="buscar">
+                                        </div>
+                                    </div>
+                                    
+                                </form>
+                            </div>
                             
                             <div class="row">
                                 <div class="col-12 text-right">
@@ -80,7 +94,7 @@
                                     </table>
                                 </div>
 
-                            </div>
+                            </div> 
                             <div class="card-footer ml-auto"></div>
                             {{$registros->links()}}
                             </div>

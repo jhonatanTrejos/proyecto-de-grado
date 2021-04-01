@@ -62,3 +62,5 @@ Route::delete('/home/edit/{libro}',[App\Http\Controllers\LibroController::class,
 
 //rutas para solicitudess
 Route::get('/home/solicitudes/index',[App\Http\Controllers\SolicitudController::class, 'index'])->name('solicitudes.index');
+Route::get('/home/solicitudes/{solicitud}',[App\Http\Controllers\SolicitudController::class, 'edit'])->name('solicitudes.edit');
+Route::put('/home/{solicitud}/edit',[App\Http\Controllers\SolicitudController::class, 'update'])->name('solicitudes.update');

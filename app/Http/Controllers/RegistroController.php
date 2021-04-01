@@ -9,13 +9,22 @@ use App\Models\registros;
 use App\Models\User;
 use GrahamCampbell\ResultType\Success;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class RegistroController extends Controller
 {
     
-    public function index()
+    public function index(Request $request)
     {
-        $registros=Registro::paginate(2);
+        //$findReg=trim($request->get('findReg'));
+        //$registros=DB::table('registros')->get()
+                                        //->where('numero_cedula','LIKE','%',$findReg,'%')
+                                        //->orWhereR('nombre_empleado','LIKE','%',$findReg,'%')
+                                        //->orderBy('id','asc')
+                                        //->paginate(10);
+                                       // ;
+
+    $registros=Registro::paginate(2);
     return view('registros.index',compact('registros'));
     }
     public function create()

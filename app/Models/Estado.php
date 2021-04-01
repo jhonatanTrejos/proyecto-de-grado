@@ -5,15 +5,16 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Estados extends Model
+class Estado extends Model
 {
     use HasFactory;
+    
 
 
-   /* public function solicitud()
+   public function solicituds()
     {
-        return $this->belongsTo(Solicitud::class);
+        return $this->hasOne(Solicitud::class);
     }
 
-*/
+
 }

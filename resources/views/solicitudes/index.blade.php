@@ -24,18 +24,17 @@
                                         </thead>
                                         <tbody>
                                           @foreach ($solicituds as $solicitud)
-                                           
                                             <tr>
                                                 <td>{{$solicitud->id}}</td>
-                                                <td>{{$solicitud->users->name}},{{$solicitud->users->last_name}}</td>
+                                                <td>{{$solicitud->users->name}}{{$solicitud->users->last_name}}</td>
                                                 <td>{{$solicitud->created_at}}</td>
                                                 <td>{{$solicitud->updated_at}}</td>
-                                                <td>{{$solicitud->id}}</td>
+                                                <td>{{$solicitud->estados->nombre}}</td>
+
                                                 
                                                 <td class="td-actions">
-                                                
-                                                   <a href="#" class="btn btn-sm btn-success">
-                                                     <i class="material-icons" value="cambiar estado">edit</i>Cambiar estado
+                                                   <a href="{{route('solicitudes.edit',$solicitud->id)}}" class="btn btn-sm btn-success">
+                                                     <i class="material-icons">edit</i>Cambiar estado
                                                     </a>
                                                 </td>
                                             </tr>  
@@ -44,7 +43,6 @@
                                         </tbody>
                                     </table>
                                 </div>
-
                         </div>
                     </div>
                 </div>
