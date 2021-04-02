@@ -76,19 +76,19 @@
                                                 <td>{{$registro->created_at}}</td>
                                                 <td>{{$registro->updated_at}}</td>
                                                 <td class="td-actions">
-                                                    <a href="{{route('registro.edit',$registro->id)}}" class="btn btn-warning ">
+                                                 <a href="{{route('registro.edit',$registro->id)}}" class="btn btn-warning ">
                                                      <i class="material-icons">edit</i>
-                                                    </a>
+                                                 </a>
                                                     <form action="{{route('registro.delete',$registro->id)}}" method="POST" style="display: inline-block;"
                                                     onsubmit=return confirmation('¿Esta seguro que desea eliminar este Registro?')>
                                                     @csrf
                                                     @method('DELETE')
                                                     <button class="btn btn-danger" type="submit">
-                                                        <i class="material-icons">delete</i>
+                                                     <i class="material-icons">delete</i>
                                                     </button>
                                                     </form>
-                                                </td>
-                                            </tr>  
+                                             </td>
+                                            </tr>    
                                         @endforeach
                                         </tbody>
                                     </table>

@@ -27,15 +27,15 @@ Route::get('/', function () {
 //Route::get('/inicio', function ()
 //{return view('inicio');
 //});
-Route::get('/nuevo', function ()
-{return view('nuevo');
-});
-Route::get('/certificado', function ()
-{return view('certificado');
-});
-Route::get('/solicitud', function ()
-{return view('solicitud');
-});
+//Route::get('/nuevo', function ()
+//{return view('nuevo');
+//});
+//Route::get('/certificado', function ()
+//{return view('certificado');
+//});
+//Route::get('/solicitud', function ()
+//{return view('solicitud');
+//});
 
 Auth::routes();
 
@@ -68,3 +68,7 @@ Route::put('/home/{solicitud}/edit',[App\Http\Controllers\SolicitudController::c
 
 //rutas certificados usuarios normales
 Route::get('/certificados', [App\Http\Controllers\HomeController::class, 'inicio'])->name('certificados.index');
+Route::get('/certificados/consultaRegistros',[App\Http\Controllers\HomeController::class, 'registro'])->name('certificados.consultaRegistros');
+Route::get('/certificados/nuevo', [App\Http\Controllers\HomeController::class, 'nuevo'])->name('certificados.nuevo');
+Route::get('/certificados/certificado', [App\Http\Controllers\HomeController::class, 'certificado'])->name('certificados.certificado');
+Route::get('/certificados/solicitud', [App\Http\Controllers\HomeController::class, 'solicitud'])->name('certificados.solicitud');
