@@ -24,9 +24,9 @@ use App\Http\Controllers\AdminController;
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('/inicio', function ()
-{return view('inicio');
-});
+//Route::get('/inicio', function ()
+//{return view('inicio');
+//});
 Route::get('/nuevo', function ()
 {return view('nuevo');
 });
@@ -64,3 +64,7 @@ Route::delete('/home/edit/{libro}',[App\Http\Controllers\LibroController::class,
 Route::get('/home/solicitudes/index',[App\Http\Controllers\SolicitudController::class, 'index'])->name('solicitudes.index');
 Route::get('/home/solicitudes/{solicitud}',[App\Http\Controllers\SolicitudController::class, 'edit'])->name('solicitudes.edit');
 Route::put('/home/{solicitud}/edit',[App\Http\Controllers\SolicitudController::class, 'update'])->name('solicitudes.update');
+
+
+//rutas certificados usuarios normales
+Route::get('/certificados', [App\Http\Controllers\HomeController::class, 'inicio'])->name('certificados.index');

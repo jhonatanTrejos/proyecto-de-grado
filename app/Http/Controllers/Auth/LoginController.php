@@ -41,7 +41,7 @@ class LoginController extends Controller
         if (auth()->user()->Admin) {
             return '/home';
         }else{
-            return '/user';
+            return 'certificados.index';
         }
        
     }

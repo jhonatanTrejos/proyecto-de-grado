@@ -1,5 +1,5 @@
 php<!DOCTYPE html>
-<html lang="en">
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -70,7 +70,7 @@ php<!DOCTYPE html>
 
         <img src="imagenes/logoquinchia.png" class="avatar" alt="Avatar Image">
         <h1>Consulta certificado</h1>
-        <form action="{{route('cliente.index')}}" method "get">
+        <form action="#" method "get">
           <!-- USERNAME INPUT -->
           <label for="username">Número de documento</label>
           <input type="search" class="form-control form-control-navbar " name="texto" placeholder="search" value="texto">

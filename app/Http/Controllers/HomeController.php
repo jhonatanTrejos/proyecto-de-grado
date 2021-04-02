@@ -28,9 +28,7 @@ class HomeController extends Controller
     {
         return view('home');
     }
-
-    public function User()
-    {
-        return view('user');
+    public function inicio(){
+        return view('certificados.index');
     }
 }

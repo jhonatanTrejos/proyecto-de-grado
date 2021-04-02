@@ -13,12 +13,6 @@ class HomeController extends Controller
 
     public function certificado(){
     return view('usuario.certificado');
-
-
 }
-public function inicio(){
-    return view('usuario.inicio');
 
-
-}
 }
