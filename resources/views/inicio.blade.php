@@ -1,85 +1,69 @@
-php<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="{{ asset('css/stilo.css') }}">
     <title>pagina de inicio</title>
 </head>
 
 
-<body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-primary">
-        <div class="container-fluid">
-            <img src="imagenes/descarg.png" width="100" alt="" height="100" >
-          <a class="navbar-brand" href="#">Alcaldía de Quinchia <br> Certificados Laborales</a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+<body class="fondo">
+    <header class="header">
+        <div class="wrapper">
 
+            <div class="logo">
 
-
-          </div>
+                <img src="imagenes/descarg.png" alt="Mi titulo de la imagen">
+        <div class="logo">
+            Alcaldía de Quinchia
         </div>
-      </nav>
 
-      <nav class="navbar navbar-expand-lg" style="background-color: #e3f2ff;">
-        <div class="container-fluid">
-           >
-          <a class="navbar-brand" href="#" >Consultas de certificados laborales</a>
-          <button class="btn btn-link" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="solicitud" onclick="alert('Seguro!...enviaras una solicitud de certificado'); return true;">Solicitud de certificados</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Ayuda y Soporte</a>
-              </li>
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  Politicas y privacidad
-                </a>
-                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <li><a class="dropdown-item" href="#">Action</a></li>
-                  <li><a class="dropdown-item" href="#">Another action</a></li>
-                  <li><hr class="dropdown-divider"></li>
-                  <li><a class="dropdown-item" href="#">Something else here</a></li>
-                </ul>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Quines Somos</a>
-              </li>
+        <nav>
 
-            </ul>
-            <form class="d-flex">
-              <input class="form-control me-2" type="search" placeholder="Busqueda" aria-label="Search">
-              <button type="button" class="btn btn-light">search</button>
-            </form>
-          </div>
+            <a href="nuevo">Ver certificado laboral</a>
+            <a href="" onclick="alert('Seguro!...enviaras una solicitud de certificado'); return true;">Solicitar Certificado Laboral</a>
+            <a href="politicas">Politicas y Privacidad </a>
+            <a href="">Quienes Somos</a>
+            <form >
+                <input class="inputB" type="search" placeholder="Busqueda" aria-label="Search" required>
+                <button class="botonB" href="#">Buscar</button>
+              </form>
+        </nav>
         </div>
-      </nav>
 
-      <div class="login-box">
-        <link href="{{ asset('css/stilo.css') }}" rel="stylesheet">
+</div>
+<center>
+    <link rel="stylesheet" href="stylo.css">
+    <ul class="slider">
+      <li id="slide1">
+        <video src="https://www.youtube.com/watch?v=H2q3BmittbA&feature=youtu.be"/>
+      </li>
+      <li id="slide2">
+        <img src="https://culturaybibliotecas.comfamiliar.com/wp-content/uploads/2017/11/Quinchia-Risaralda-copia.jpg"/>
+      </li>
+      <li id="slide3">
+        <h1>Ejemplo con otros elementos</h1>
+        <p>Esto es un párrafo de ejemplo para comprobar que podemos meter cualquier tipo de elementos en el slider</p>
+        <a href=http://www.quinchia-risaralda.gov.co/">¡Corre a mi web para más contenido!</a>
+      </li>
+    </ul>
+
+    <ul class="menu">
+      <li>
+        <a href="#slide1">1</a>
+      </li>
+      <li>
+        <a href="#slide2">2</a>
+      </li>
+       <li>
+        <a href="#slide3">3</a>
+      </li>
+    </ul>
 
 
-        <img src="imagenes/logoquinchia.png" class="avatar" alt="Avatar Image">
-        <h1>Consulta certificado</h1>
-        <form action="{{route('cliente.index')}}" method "get">
-          <!-- USERNAME INPUT -->
-          <label for="username">Número de documento</label>
-          <input type="search" class="form-control form-control-navbar " name="texto" placeholder="search" value="texto">
-          <a href="nuevo" type="button" href="nuevo" class="btn btn-success">Ver certificado
-          </a><button type="button" href="nuevo" class="btn btn-success">Ver certificado</button>
-        </form>
-
-      </div>
-
-    </div>
+</center>
 </body>
 </html>
