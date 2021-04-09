@@ -6,11 +6,11 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('css/stilo.css') }}">
-    
+
     <title>login</title>
 </head>
 <body class="fondo">
-   
+
     <header class="header">
         <div class="wrapper">
 
@@ -20,7 +20,7 @@
         <div class="logo">
             Alcaldía de Quinchia
         </div>
-        
+
         <nav>
 
             <a href="nuevo">Ver certificado laboral</a>
@@ -33,10 +33,10 @@
               </form>
         </nav>
         </div>
-    
+
 </div>
-          
-       
+
+
     </header>
   <!--  <nav class="navbar navbar-expand-lg navbar-light bg-primary">
         <div class="container-fluid">
@@ -94,11 +94,15 @@
               <div style="width: 100%; background: #0000;height: 45px; position: absolute" >
 
             <iframe class="iframe" src="certificado" tabindex="-1" >
-                
+
 
         </iframe>
+
+        <button class="botonc" href="{{ route('imprimir') }}">imprimir pdf</button>
         </div>
+
     </div>
+
          </center>
 
 

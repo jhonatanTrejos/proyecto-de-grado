@@ -8,6 +8,18 @@ body {
 
 
 }
+.botonc{
+    text-decoration: none;
+    padding: 13px;
+    font-weight: 400;
+    font-size: 12px;
+    color: #ffffff;
+    background-color: #1883ba;
+    border-radius: 6px;
+    border: 2px solid #0edd31;
+    right: 0;
+    padding: 10px 20px;
+}
   .fondo{
     background: url(../imagenes/logoquinchia.png) no-repeat center top;
     background-size: cover;

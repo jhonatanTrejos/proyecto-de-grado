@@ -44,6 +44,7 @@ Route::get('/politicas', function ()
 Route::get('/politicas', function ()
 {return view('politicas');
 });
+route::name('imprimir')->get('\imprimir-pdf', 'Controller@imprimir');
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
