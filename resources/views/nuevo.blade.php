@@ -98,7 +98,7 @@
 
         </iframe>
 
-        <button class="botonc" href="{{ route('imprimir') }}">imprimir pdf</button>
+        <button class="botonc" href="{{ route('imprimir') }}">descargar pdf</button>
         </div>
 
     </div>
